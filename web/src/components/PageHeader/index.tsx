@@ -7,11 +7,12 @@ import logoImg from '../../assets/images/logo.svg';
 
 import './styles.css'
 interface PageHeaderProps {
-    title: string
+    title: string;
+    description?: string;
 }
 
 
-const  PageHeader: React.FC<PageHeaderProps> = ({title, children}) => {
+const  PageHeader: React.FC<PageHeaderProps> = ({title, description, children}) => {
     return(
     <header id="" className="page-header">
         <div id="" className="top-bar-container">
@@ -24,6 +25,8 @@ const  PageHeader: React.FC<PageHeaderProps> = ({title, children}) => {
             <strong>
                 {title}
             </strong>
+            {description && <p>{description}</p>}
+    
             {children}
 
         </div>
